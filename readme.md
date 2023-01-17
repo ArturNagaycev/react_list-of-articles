@@ -1,27 +1,24 @@
-Single Page Application with React
-Used technologies
-TS
-SASS
-React
-Eslint (for making code more consistent and avoiding bugs)
-Material UI (input, icons)
-Axios for data request
-lodash.debouncer (wait delay for user input)
-React router v6 for navigation
-Redux/toolkit to storage data
-MOCK-UP
+# Single Page Application with React
+## Used technologies
+- Typescript
+- React (Router, hooks)
+- Redux toolkit
+- SASS prepocessor
+- Material UI
+- Eslint
+- lodash.debouncer (delay for user input)
 
-DEMO-LINK
+[Figma design](https://www.figma.com/file/h1veXmuEt84sT7PEZgF42K/Frontend_test?node-id=0%3A1&t=hHZbp95zSM9eSrXr-0)
 
-Home page contain:
+[DEMO](https://codebridgett.netlify.app/)
 
-Cards with article titles for 70 characters.
-Cards with article description for 100 characters.
-A field to filter by keyword.
-The user enters keywords into the field and the system displays all articles containing at least one of the keywords in the name or/and description.
+## Description:
+Home page contains:
+
+1. Cards with article titles and descriptions for 100 characters. The user can click on the card to go to an article page that contains the title and full description of the selected article.
+
+2. A field to filter by keyword. The user enters keywords into the field and the system displays all articles containing at least one of the keywords in the name or/and description.
 
 The priority of fields: (1) names; and (2) description. The article with one match in the name is higher than the article with one match in the description.
 
 The matched keywords are highlighted with yellow color.
-
-The user can click on card to go to an article page that contains the title and full description of the selected article.
