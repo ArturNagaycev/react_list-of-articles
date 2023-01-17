@@ -1,0 +1,11 @@
+@import "../../styles/vars";
+
+.filter {
+  &__title {
+    color: $color-main-text;
+  }
+
+  &__form {
+    width: 600px;
+  }
+}

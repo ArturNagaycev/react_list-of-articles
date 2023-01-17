@@ -1,15 +1,14 @@
 import React from 'react';
-import Router from './routes/router';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { ArticlePage } from './components/ArticlePage';
+import { HomePage } from './components/HomePage';
+import { NotFoundPage } from './components/NotFoundPage';
 
-const App = function () {
-  return (
-    <div className="App">
-      <div className="container">
-        <p>App Works!</p>
-        <Router />
-      </div>
-    </div>
-  );
-};
-
-export default App;
+export const App: React.FC = () => (
+  <Routes>
+    <Route path="/" element={<HomePage />} />
+    <Route path="/home" element={<Navigate to="/" replace />} />
+    <Route path="/article/:articleId" element={<ArticlePage />} />
+    <Route path="*" element={<NotFoundPage />} />
+  </Routes>
+);

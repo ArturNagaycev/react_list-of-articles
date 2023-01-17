@@ -1,28 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import { BrowserRouter } from 'react-router-dom';
-
 import { Provider } from 'react-redux';
-import { store } from './store';
+import { createTheme, ThemeProvider } from '@mui/material';
+import './index.scss';
+import { HashRouter } from 'react-router-dom';
+import { App } from './App';
+import { store } from './app/store';
 
-import './styles/global.scss';
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Montserrat, sans-serif',
+  },
+  palette: {
+    text: {
+      primary: 'rgb(54, 54, 54)',
+      secondary: 'rgb(87, 87, 87)',
+    },
+  },
+});
 
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root'),
+const Root = () => (
+  <HashRouter>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Provider>
+    </ThemeProvider>
+  </HashRouter>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<Root />, document.getElementById('root'));

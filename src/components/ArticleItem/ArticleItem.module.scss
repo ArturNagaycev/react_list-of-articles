@@ -1,0 +1,23 @@
+@import '../../styles/vars';
+
+.article {
+  transition: transform .3s;
+
+  &:hover {
+    transform: scale(105%);
+  }
+
+  &__card {
+    height: 100%;
+  }
+
+  &__image {
+    height: 218px;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    opacity: .6;
+  }
+}
